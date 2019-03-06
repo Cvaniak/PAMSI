@@ -1,0 +1,4 @@
+/home/elcvaniako/Dokumenty/tester/build/CMakeFiles/rebuild_cache.dir
+/home/elcvaniako/Dokumenty/tester/build/CMakeFiles/edit_cache.dir
+/home/elcvaniako/Dokumenty/tester/build/CMakeFiles/pamsi_tester.dir
+/home/elcvaniako/Dokumenty/tester/build/CMakeFiles/pamsi_tester_example.dir

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpamsi_tester.a  CMakeFiles/pamsi_tester.dir/src/Timer.cpp.o
+/usr/bin/ranlib libpamsi_tester.a
