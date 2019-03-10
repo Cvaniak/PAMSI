@@ -1,0 +1,3 @@
+/home/elcvaniako/Dokumenty/Struktury/build/CMakeFiles/edit_cache.dir
+/home/elcvaniako/Dokumenty/Struktury/build/CMakeFiles/rebuild_cache.dir
+/home/elcvaniako/Dokumenty/Struktury/build/CMakeFiles/pamsi_list.dir

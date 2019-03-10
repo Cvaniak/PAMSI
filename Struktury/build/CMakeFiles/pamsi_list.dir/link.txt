@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -pedantic   CMakeFiles/pamsi_list.dir/src/main.cpp.o  -o pamsi_list 

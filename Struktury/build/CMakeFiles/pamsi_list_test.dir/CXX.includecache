@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/List.hpp
+iostream
+-
+vector
+-
+list
+-
+numeric
+-
+string
+-
+functional
+-
+
+/home/elcvaniako/Dokumenty/Struktury/src/List.cpp
+List.hpp
+/home/elcvaniako/Dokumenty/Struktury/src/List.hpp
+
