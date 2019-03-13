@@ -1,3 +1,0 @@
-/home/elcvaniako/Dokumenty/CPP_School/Struktury/build/CMakeFiles/pamsi_list.dir
-/home/elcvaniako/Dokumenty/CPP_School/Struktury/build/CMakeFiles/rebuild_cache.dir
-/home/elcvaniako/Dokumenty/CPP_School/Struktury/build/CMakeFiles/edit_cache.dir
