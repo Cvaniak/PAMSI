@@ -20,6 +20,34 @@ string
 functional
 -
 
+../include/Map.hpp
+iostream
+-
+vector
+-
+list
+-
+numeric
+-
+string
+-
+functional
+-
+
+../include/Pqueue.hpp
+iostream
+-
+vector
+-
+list
+-
+numeric
+-
+string
+-
+functional
+-
+
 ../include/Queue.hpp
 iostream
 -
@@ -48,7 +76,7 @@ string
 functional
 -
 
-/home/elcvaniako/Dokumenty/Struktury/src/main.cpp
+/home/elcvaniako/Dokumenty/CPP_School/Struktury/src/main.cpp
 iostream
 -
 vector
@@ -62,9 +90,13 @@ string
 functional
 -
 List.hpp
-/home/elcvaniako/Dokumenty/Struktury/src/List.hpp
+/home/elcvaniako/Dokumenty/CPP_School/Struktury/src/List.hpp
 Stack.hpp
-/home/elcvaniako/Dokumenty/Struktury/src/Stack.hpp
+/home/elcvaniako/Dokumenty/CPP_School/Struktury/src/Stack.hpp
 Queue.hpp
-/home/elcvaniako/Dokumenty/Struktury/src/Queue.hpp
+/home/elcvaniako/Dokumenty/CPP_School/Struktury/src/Queue.hpp
+Pqueue.hpp
+/home/elcvaniako/Dokumenty/CPP_School/Struktury/src/Pqueue.hpp
+Map.hpp
+/home/elcvaniako/Dokumenty/CPP_School/Struktury/src/Map.hpp
 

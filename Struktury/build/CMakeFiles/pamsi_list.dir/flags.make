@@ -6,5 +6,5 @@ CXX_FLAGS = -Wall -pedantic   -std=c++1z
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/elcvaniako/Dokumenty/Struktury/include 
+CXX_INCLUDES = -I/home/elcvaniako/Dokumenty/CPP_School/Struktury/include 
 

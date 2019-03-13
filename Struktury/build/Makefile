@@ -48,24 +48,13 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/elcvaniako/Dokumenty/Struktury
+CMAKE_SOURCE_DIR = /home/elcvaniako/Dokumenty/CPP_School/Struktury
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/elcvaniako/Dokumenty/Struktury/build
+CMAKE_BINARY_DIR = /home/elcvaniako/Dokumenty/CPP_School/Struktury/build
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,11 +67,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/local/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/elcvaniako/Dokumenty/Struktury/build/CMakeFiles /home/elcvaniako/Dokumenty/Struktury/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elcvaniako/Dokumenty/CPP_School/Struktury/build/CMakeFiles /home/elcvaniako/Dokumenty/CPP_School/Struktury/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/elcvaniako/Dokumenty/Struktury/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/elcvaniako/Dokumenty/CPP_School/Struktury/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -156,9 +156,9 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... rebuild_cache"
 	@echo "... pamsi_list"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

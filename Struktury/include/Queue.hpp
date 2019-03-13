@@ -30,6 +30,13 @@ class Queue{
     Element<T> *last;
     int size;
 public :
+
+    Queue(){
+        this->first = NULL;
+        this->last = NULL;
+        this->size = 0;
+    }
+
     void enqueue ( const T& newElement );
     T dequeue () ;
 };

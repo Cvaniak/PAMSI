@@ -3,6 +3,8 @@
 
 CMakeFiles/pamsi_list.dir/src/main.cpp.o
  ../include/List.hpp
+ ../include/Map.hpp
+ ../include/Pqueue.hpp
  ../include/Queue.hpp
  ../include/Stack.hpp
- /home/elcvaniako/Dokumenty/Struktury/src/main.cpp
+ /home/elcvaniako/Dokumenty/CPP_School/Struktury/src/main.cpp

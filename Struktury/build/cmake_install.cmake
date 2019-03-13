@@ -1,4 +1,4 @@
-# Install script for directory: /home/elcvaniako/Dokumenty/Struktury
+# Install script for directory: /home/elcvaniako/Dokumenty/CPP_School/Struktury
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/elcvaniako/Dokumenty/Struktury/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/elcvaniako/Dokumenty/CPP_School/Struktury/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

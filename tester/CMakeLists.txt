@@ -30,3 +30,4 @@ target_include_directories(pamsi_tester_example PRIVATE
 
 
 target_link_libraries(pamsi_tester_example pamsi_tester)
+# add_subdirectory(dir) <- jeśli projekt ma własny cmake w innym katalogu

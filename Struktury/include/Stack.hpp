@@ -50,7 +50,7 @@ T Stack<T>::pop () {
     Element<T> *temp = top;
     T tempValue = top->data;
     top = top->previous;
-    delete top;
+    delete temp;
     size--;
     return tempValue;
 

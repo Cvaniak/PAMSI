@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/elcvaniako/Dokumenty/Struktury/src/main.cpp" "/home/elcvaniako/Dokumenty/Struktury/build/CMakeFiles/pamsi_list.dir/src/main.cpp.o"
+  "/home/elcvaniako/Dokumenty/CPP_School/Struktury/src/main.cpp" "/home/elcvaniako/Dokumenty/CPP_School/Struktury/build/CMakeFiles/pamsi_list.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libpamsi_list_test.a  CMakeFiles/pamsi_list_test.dir/src/List.cpp.o
-/usr/bin/ranlib libpamsi_list_test.a

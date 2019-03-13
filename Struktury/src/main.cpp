@@ -7,6 +7,8 @@
 #include "List.hpp"
 #include "Stack.hpp"
 #include "Queue.hpp"
+#include "Pqueue.hpp"
+#include "Map.hpp"
 
 void testList(){
     LiNm::List <int>* lista = new LiNm::List <int>;
@@ -44,10 +46,37 @@ void testQueue(){
     std::cout << queue->dequeue() << std::endl;
 }
 
+void testPqueue(){
+    PquNm::PriorityQueue <int>* pqueue = new PquNm::PriorityQueue <int>;
+    pqueue->enqueue(1, 4);  //1
+    pqueue->enqueue(2, 2);  //1 2
+    pqueue->enqueue(3, 8);  //3 1 2
+    pqueue->enqueue(4, 12); //4 3 1 2
+    pqueue->enqueue(5, 1);  //4 3 1 2 5
+    std::cout << pqueue->dequeue() << std::endl;
+    std::cout << pqueue->dequeue() << std::endl;
+    std::cout << pqueue->dequeue() << std::endl;
+    std::cout << pqueue->dequeue() << std::endl;
+    std::cout << pqueue->dequeue() << std::endl;
+
+}
+
+void testMap(){
+    std::string a = "cos";
+    MpNm::Map <std::string, int>* map = new MpNm::Map <std::string, int>;
+    map->insert("abc", 3);
+    map->remove("abc");
+    // int b = map.get("abc");
+    std::cout << "Sum: " << (*map)["abc"] << std::endl;
+
+}
+
 int main(){
     // testList();
     // testStack();
-    testQueue();
+    // testQueue();
+    // testPqueue();
+    testMap();
 
     return 0;
 }
