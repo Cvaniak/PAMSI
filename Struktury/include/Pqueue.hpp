@@ -29,8 +29,14 @@ class PriorityQueue{
     Element<T> *first;
     int size;
 public :
+    PriorityQueue(){
+        this->first = NULL;
+        this->size = 0;
+    }
     void enqueue ( const T& newElement , int priority ) ;
     T dequeue () ;
+    int getSize (); 
+
 };
 
 template < typename T>
@@ -38,11 +44,13 @@ void PriorityQueue<T>::enqueue ( const T& newElement , int priority ){
     Element<T> *tempNew = new Element<T> (newElement, priority);
     if (!first){
         first = tempNew;
+        size++;
         return;
     }
     if(priority > first->priority){
         tempNew->next = first;
         first = tempNew;
+        size++;
         return;
     }
     Element<T> *tempIterator = first;
@@ -69,6 +77,12 @@ T PriorityQueue<T>::dequeue () {
     size--;
     return value;    
 }
+
+template < typename T>
+int PriorityQueue<T>::getSize () {
+    return this->size;
+}
+
 
 
 }

@@ -44,16 +44,10 @@ public :
 template < typename T>
 void Queue<T>::enqueue ( const T& newElement ){
     Element<T> *temp = new Element<T> (newElement);
-    if (last){
+    if (size>0){
         last->next = temp;
         temp->previous = last;
         last = temp;
-    }
-    else if(size == 1){    
-        // std::cout << "c" << std::endl;
-        last = temp;
-        first->next = last;
-        last->previous = first;
     }
     else{
         first = last = temp;

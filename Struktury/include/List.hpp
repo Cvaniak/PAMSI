@@ -39,7 +39,7 @@ public:
 	/* odwiedza nastepny element w kontenerze */
 	iterator& operator++()
 	{
-        std::cout << element->data << std::endl;
+        // std::cout << element->data << std::endl;
 		element = element->next;
  
 		return *this;
@@ -48,7 +48,7 @@ public:
 	/* postinkrementacja - iter++ */
 	iterator& operator++(int)
 	{
-        std::cout << "uuu" << std::endl;
+        // std::cout << "uuu" << std::endl;
 		iterator tmp = *this;
 		element = element->next;
  
@@ -116,16 +116,10 @@ public :
 template < typename T>
 void List<T>::pushBack(const T& newElement){
     Element<T> *temp = new Element<T> (newElement);
-    if (last){
+    if (last != NULL){
         last->next = temp;
         temp->previous = last;
         last = temp;
-    }
-    else if(size == 1){    
-        // std::cout << "c" << std::endl;
-        last = temp;
-        first->next = last;
-        last->previous = first;
     }
     else{
         first = last = temp;
@@ -138,17 +132,11 @@ template < typename T>
 void List<T>::pushFront(const T& newElement){
     Element<T> *temp = new Element<T> (newElement);
     // std::cout << first << std::endl;
-    if (size>1){
+    if (first){
         // std::cout << "a" << std::endl;
         first->previous = temp;
         temp->next = first;
         first = temp;
-    }
-    else if(size == 1){    
-        // std::cout << "c" << std::endl;
-        first = temp;
-        first->next = last;
-        last->previous = first;
     }
     else{
     // std::cout << "b" << std::endl;
@@ -162,24 +150,23 @@ template < typename T>
 void List<T>::deleteE(Element<T>& e, const T& element){
     if(e.data == element)
     {
-    std::cout << e.data << element << std::endl;
+    // std::cout << e.data << element << std::endl;
         if(e.next && e.previous){
-            std::cout << "a" << std::endl;
+            // std::cout << "a" << std::endl;
             e.previous->next = e.next;
             e.next->previous = e.previous;
         }
         else if (e.next)
         {
-            std::cout << "b" << std::endl;
+            // std::cout << "b" << std::endl;
             e.next->previous = NULL;
             first = e.next;
         }
         else{
-            std::cout << "c" << std::endl;
+            // std::cout << "c" << std::endl;
             e.previous->next = NULL;
             last = e.previous;
         }
-        delete &(e);
         size --;
     }
 }
@@ -206,7 +193,7 @@ void List<T>::insert( const T& newElement , int index ){
         New->previous = e;
         last = New;
         size++;
-        std::cout << "Saaa" << std::endl;
+        // std::cout << "Saaa" << std::endl;
            
     }
     else
@@ -216,14 +203,14 @@ void List<T>::insert( const T& newElement , int index ){
         {
             e = e->next;
         }
-        std::cout << "q" << std::endl;
+        // std::cout << "q" << std::endl;
         if(e->next && e->previous){
             e->previous->next = New;
             e->previous = New;
             New->previous = e->previous;
             New->next = e;
             size++;
-            std::cout << "as" << std::endl;
+            // std::cout << "as" << std::endl;
         }
         else if (e->next)
         {
@@ -231,7 +218,7 @@ void List<T>::insert( const T& newElement , int index ){
             first = New;
             (New->next) = e;
             size++;
-            std::cout << "Aa" << std::endl;
+            // std::cout << "Aa" << std::endl;
         }
         else if(e->previous){
 
@@ -240,7 +227,7 @@ void List<T>::insert( const T& newElement , int index ){
             New->previous = e->previous;
             New->next = e;
             size++;
-            std::cout << "Aa" << std::endl;
+            // std::cout << "Aa" << std::endl;
             // e->next = New;
 
         }

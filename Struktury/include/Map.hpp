@@ -54,7 +54,7 @@ int Map<KeyType, ValueType>::hashGenerator(KeyType key){
     int def = 0;
     for (int i = 0; i < key.length(); i++)
     {
-        // def += ((int)key[i])*(i+1);
+        def += ((int)key[i])*(i+1);
     }
     return def;
 }
