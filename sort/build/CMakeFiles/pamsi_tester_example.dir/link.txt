@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall    CMakeFiles/pamsi_tester_example.dir/src/main.cpp.o  -o pamsi_tester_example libpamsi_tester.a 

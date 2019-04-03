@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/pamsi_tester/Timer.hpp
+chrono
+-
+
+/home/elcvaniako/Dokumenty/CPP_School/sort/src/Timer.cpp
+pamsi_tester/Timer.hpp
+/home/elcvaniako/Dokumenty/CPP_School/sort/src/pamsi_tester/Timer.hpp
+
