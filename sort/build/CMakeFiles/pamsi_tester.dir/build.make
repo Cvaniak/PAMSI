@@ -43,10 +43,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/elcvaniako/Dokumenty/CPP_School/sort
+CMAKE_SOURCE_DIR = /home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/elcvaniako/Dokumenty/CPP_School/sort/build
+CMAKE_BINARY_DIR = /home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/pamsi_tester.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/pamsi_tester.dir/flags.make
 
 CMakeFiles/pamsi_tester.dir/src/Timer.cpp.o: CMakeFiles/pamsi_tester.dir/flags.make
 CMakeFiles/pamsi_tester.dir/src/Timer.cpp.o: ../src/Timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/elcvaniako/Dokumenty/CPP_School/sort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pamsi_tester.dir/src/Timer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pamsi_tester.dir/src/Timer.cpp.o -c /home/elcvaniako/Dokumenty/CPP_School/sort/src/Timer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/pamsi_tester.dir/src/Timer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/pamsi_tester.dir/src/Timer.cpp.o -c /home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/src/Timer.cpp
 
 CMakeFiles/pamsi_tester.dir/src/Timer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/pamsi_tester.dir/src/Timer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/elcvaniako/Dokumenty/CPP_School/sort/src/Timer.cpp > CMakeFiles/pamsi_tester.dir/src/Timer.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/src/Timer.cpp > CMakeFiles/pamsi_tester.dir/src/Timer.cpp.i
 
 CMakeFiles/pamsi_tester.dir/src/Timer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/pamsi_tester.dir/src/Timer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/elcvaniako/Dokumenty/CPP_School/sort/src/Timer.cpp -o CMakeFiles/pamsi_tester.dir/src/Timer.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/src/Timer.cpp -o CMakeFiles/pamsi_tester.dir/src/Timer.cpp.s
 
 # Object files for target pamsi_tester
 pamsi_tester_OBJECTS = \
@@ -80,7 +80,7 @@ pamsi_tester_EXTERNAL_OBJECTS =
 libpamsi_tester.a: CMakeFiles/pamsi_tester.dir/src/Timer.cpp.o
 libpamsi_tester.a: CMakeFiles/pamsi_tester.dir/build.make
 libpamsi_tester.a: CMakeFiles/pamsi_tester.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/elcvaniako/Dokumenty/CPP_School/sort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libpamsi_tester.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libpamsi_tester.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/pamsi_tester.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/pamsi_tester.dir/link.txt --verbose=$(VERBOSE)
 
@@ -94,6 +94,6 @@ CMakeFiles/pamsi_tester.dir/clean:
 .PHONY : CMakeFiles/pamsi_tester.dir/clean
 
 CMakeFiles/pamsi_tester.dir/depend:
-	cd /home/elcvaniako/Dokumenty/CPP_School/sort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/elcvaniako/Dokumenty/CPP_School/sort /home/elcvaniako/Dokumenty/CPP_School/sort /home/elcvaniako/Dokumenty/CPP_School/sort/build /home/elcvaniako/Dokumenty/CPP_School/sort/build /home/elcvaniako/Dokumenty/CPP_School/sort/build/CMakeFiles/pamsi_tester.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort /home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort /home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build /home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build /home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build/CMakeFiles/pamsi_tester.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/pamsi_tester.dir/depend
 

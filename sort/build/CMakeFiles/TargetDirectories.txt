@@ -1,4 +1,4 @@
-/home/elcvaniako/Dokumenty/CPP_School/sort/build/CMakeFiles/rebuild_cache.dir
-/home/elcvaniako/Dokumenty/CPP_School/sort/build/CMakeFiles/edit_cache.dir
-/home/elcvaniako/Dokumenty/CPP_School/sort/build/CMakeFiles/pamsi_tester.dir
-/home/elcvaniako/Dokumenty/CPP_School/sort/build/CMakeFiles/pamsi_tester_example.dir
+/home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build/CMakeFiles/rebuild_cache.dir
+/home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build/CMakeFiles/edit_cache.dir
+/home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build/CMakeFiles/pamsi_tester.dir
+/home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build/CMakeFiles/pamsi_tester_example.dir

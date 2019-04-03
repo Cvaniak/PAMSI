@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/elcvaniako/Dokumenty/CPP_School/sort/src/Timer.cpp" "/home/elcvaniako/Dokumenty/CPP_School/sort/build/CMakeFiles/pamsi_tester.dir/src/Timer.cpp.o"
+  "/home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/src/Timer.cpp" "/home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/build/CMakeFiles/pamsi_tester.dir/src/Timer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

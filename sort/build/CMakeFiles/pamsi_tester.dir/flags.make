@@ -6,5 +6,5 @@ CXX_FLAGS = -Wall    -std=c++1z
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/elcvaniako/Dokumenty/CPP_School/sort/include 
+CXX_INCLUDES = -I/home/elcvaniako/Dokumenty/NewSchool/PAMSI/sort/include 
 

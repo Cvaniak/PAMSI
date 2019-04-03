@@ -38,10 +38,10 @@ void Tester<ResultType, InputType>::runAllTests(std::istream& inputStream,
 
     while(!inputStream.eof())
     {
-    std::cout << "d" << std::endl;
+    // std::cout << "d" << std::endl;
         auto input = readSingleInput(inputStream);
 
-    std::cout << "e" << std::endl;
+    // std::cout << "e" << std::endl;
         if(inputStream)
         {
             spdlog::info("Next dataset processing {}", datasetIndex);
@@ -88,7 +88,8 @@ float Tester<ResultType, InputType>::runForSingleDataset(
     //     k++;
     // }
     outputStream << input.size()<<std::endl;
-    std::cout << "c" << std::endl;
+    // std::cout << "c" << std::endl;
+    input.clear();
 
     return execTimeInMs;
 }

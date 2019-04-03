@@ -105,18 +105,18 @@ int MergeTester::runAlgorithm(std::vector<int>& inputData)
 std::vector<int> MergeTester::readSingleInput(std::istream& inputStream)
 {
 
-    std::cout << "f" << std::endl;
+    // std::cout << "f" << std::endl;
     int numOfData = 0;
 
 
     srand( time( NULL ) );
     std::vector<int> result;
 
-    std::cout << "f2" << std::endl;
+    // std::cout << "f2" << std::endl;
     inputStream >> numOfData;
-    std::cout << "f2.5" << numOfData << std::endl;
+    // std::cout << "f2.5" << numOfData << std::endl;
     result.reserve(numOfData);
-    std::cout << "f3" << std::endl;
+    // std::cout << "f3" << std::endl;
 
     for(auto i = 0; i < numOfData; ++i)
     {
@@ -125,7 +125,7 @@ std::vector<int> MergeTester::readSingleInput(std::istream& inputStream)
         result.push_back(dataElement);
     }
 
-    std::cout << "g" << std::endl;
+    // std::cout << "g" << std::endl;
     return result;
 }
 
@@ -209,7 +209,7 @@ void QuickSort(std::vector<int> &tab){
 
 void merge(std::vector<int> &tab, int l, int x, int p) 
 {     
-    std::cout << "a" << std::endl;
+    // std::cout << "a" << std::endl;
     int sizeTemp = p-l+1;
     int tabTemp[sizeTemp];
     int i=l, j=x+1, k=0;
@@ -251,33 +251,33 @@ void MergeSort(std::vector<int> &tab, int l, int p)
         MergeSort(tab, x+1, p); 
         merge(tab, l, x, p); 
     } 
-    std::cout << "b" << std::endl;
+    // std::cout << "b" << std::endl;
 } 
 
 
 int main(int /*argc*/, char* /*argv*/[])
 {
-    // std::ifstream inputFile1{"input1.txt"};
-    // std::ifstream inputFile2{"input2.txt"};
+    std::ifstream inputFile1{"input1.txt"};
+    std::ifstream inputFile2{"input2.txt"};
     std::ifstream inputFile3{"input3.txt"};
-    // std::ofstream dataOutputFile1{"output3.txt"}, timeOutputFile1{"times3.csv"};
-    // std::ofstream dataOutputFile2{"output4.txt"}, timeOutputFile2{"times4.csv"};
+    std::ofstream dataOutputFile1{"output3.txt"}, timeOutputFile1{"times3.csv"};
+    std::ofstream dataOutputFile2{"output4.txt"}, timeOutputFile2{"times4.csv"};
     std::ofstream dataOutputFile3{"output5.txt"}, timeOutputFile3{"times5.csv"};
 
-    // HeapTester tester1;
-    // QuickTester tester2;
+    HeapTester tester1;
+    QuickTester tester2;
     MergeTester tester3;
 
-    // if(!inputFile1)
-    // {
-    //     spdlog::error("input.txt cannot be opened!");
-    //     return -1;
-    // }
-    // if(!inputFile2)
-    // {
-    //     spdlog::error("input.txt cannot be opened!");
-    //     return -1;
-    // }
+    if(!inputFile1)
+    {
+        spdlog::error("input.txt cannot be opened!");
+        return -1;
+    }
+    if(!inputFile2)
+    {
+        spdlog::error("input.txt cannot be opened!");
+        return -1;
+    }
     if(!inputFile3)
     {
         spdlog::error("input.txt cannot be opened!");
@@ -288,8 +288,8 @@ int main(int /*argc*/, char* /*argv*/[])
 
     // tester.readSingleInput(inputFile);
     // tester.runAllTests();
-    // tester1.runAllTests(inputFile1, dataOutputFile1, timeOutputFile1, 1);
     // tester2.runAllTests(inputFile2, dataOutputFile2, timeOutputFile2, 1);
-    tester3.runAllTests(inputFile3, dataOutputFile3, timeOutputFile3, 1);
+    // tester3.runAllTests(inputFile3, dataOutputFile3, timeOutputFile3, 1);
+    tester1.runAllTests(inputFile1, dataOutputFile1, timeOutputFile1, 1);
 
 }
