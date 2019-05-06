@@ -55,6 +55,8 @@
 //     printGraf(tabN, nodesNumber);
 // }
 
+int INF = 100000;
+int N_INF = -100000;
 
 void printGraf(Graph g){
     for(int i = 0; i<g.nodes.size(); i++){
@@ -69,6 +71,19 @@ void printGraf(Graph g){
     // for(Node n: nT){
 
     // }
+}
+
+void printPath(std::vector <int> temp){
+    for(int i = 0; i<temp.size(); i++){
+        std::cout << i << " = " ;
+        if(temp[i] == INF)
+            std::cout << "INF";
+        else if(temp[i] == N_INF)
+            std::cout << "-INF";
+        else
+            std::cout << temp[i];
+        std::cout << std::endl;
+    }
 }
 
 void load(Graph& g, int nodesNumber, double density, double &edgesNumber){
@@ -93,16 +108,43 @@ void load(Graph& g, int nodesNumber, double density, double &edgesNumber){
     printGraf(g);
 }
 
+std::vector <int> Harison(Graph g, int startingNode, int nodesNumber, double edgesNumber){
+    std::vector <int> temp(nodesNumber, INF);
+    temp[startingNode] = 0;
+    for(int i = 0; i<=nodesNumber-1; i++){
+        for(int j = 0; j<nodesNumber; j++){
+            for(int k = 0; k<g.nodes[j].size(); k++){
+                int pNode = j;
+                int nNode = g.nodes[j][k].toNode;
+                int valueToNode = g.nodes[j][k].value;
+                if (temp[j]!=INF && temp[j]+valueToNode < temp[nNode]){
+
+                    temp[nNode] = temp[j]+valueToNode;
+
+                    if (i==nodesNumber-1) {
+                        temp[nNode] = N_INF;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    return temp;
+}
 
 
 int main(int /*argc*/, char* /*argv*/[]){
     std::cout << "hello world" << std::endl;
+    std::vector <int> result;
     int nodesNumber = 5;
+    int startingNode= 0;
     double edgesNumber;
-    double density = 0.5;
+    double density = 0.25;
     Graph g;
     load(g, nodesNumber, density, edgesNumber);
-
+    result = Harison(g, startingNode, nodesNumber, edgesNumber);
+    printPath(result);
     // Edge a;
     // a.value = -1;
     // a.toNode = 2;
