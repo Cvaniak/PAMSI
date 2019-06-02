@@ -1,11 +1,15 @@
 var input1;
 var input2;
 var inputToWin;
-var gameWidth = 10;
-var gameHeight = 10;
+var inputDepth;
+var gameWidth = 3;
+var gameHeight = 3;
 var toWin = 2;
 var rect1;
 var player = 1;
+var move =0;
+var depthMax =33;
+
 
 function setup() {//Wbudowana
   createCanvas(400, 400);
@@ -13,10 +17,14 @@ function setup() {//Wbudowana
   input1 = createInput();
   input2 = createInput();
   inputToWin = createInput();
+  inputDepth = createInput();
 
   input1.changed(dr);
   input2.changed(dr);
   inputToWin.changed(function(){toWin = inputToWin.value()-1});
+  inputDepth.changed(function(){depthMax = inputDepth.value();
+    console.log(depthMax + " " + "--------------")
+  });
   dr();
 }
 
@@ -25,11 +33,13 @@ function dr() {
 // console.log(Number.isInteger(parseInt(input1.value(), 10)))
   if(Number.isInteger(parseInt(input1.value(), 10))){
     gameWidth = parseInt(input1.value(), 10)
+    // depthMax = gameWidth*gameHeight;
   }
   if(Number.isInteger(parseInt(input2.value(), 10))){
     gameHeight = parseInt(input2.value(), 10)
+    // depthMax = gameWidth*gameHeight;
   }
-  console.log(Number.isInteger(gameWidth))
+  // console.log(Number.isInteger(gameWidth))
 
   rect1 = [];
   for (var i = 0; i < gameWidth; i++) {
@@ -40,7 +50,20 @@ function dr() {
   for (var i = 0; i < gameWidth; i++)
     for (var j = 0; j < gameHeight; j++)
       rect1[i][j] = 0;
-  console.log(rect1[0][0])
+  console.log(gameWidth + " " + gameHeight)
+
+  // player = 1;
+  move =0;
+  if(player ==2)
+    chooseMove();
+  // if()
+  // rect1[0][0] = 2;
+  // rect1[2][0] = 2;
+  // rect1[0][1] = 1;
+  // rect1[1][1] = 1;
+  // rect1[2][1] = 2;
+  // move = 5;
+  // player = 1;
 
 }
 
@@ -66,9 +89,10 @@ function mousePressed() {//Wbudowana funckja
   let w = parseInt(gameWidth * (mouseX / width), 10);
   let h = parseInt(gameHeight * (mouseY / height), 10);
   if(rect1[w][h] == 0){
-    rect1[w][h] = player;
-    changePlayer();
-    isWin();
+    let tMove = {x:w, y:h};
+    // moveAI(tMove)
+    if(!moveAI(tMove))
+      chooseMove();
   }
 
   // console.log(rect1[parseInt(gameWidth * (mouseX / gameWidth), 10)][parseInt(gameHeight * (mouseY / height), 10)]);
@@ -120,6 +144,7 @@ function isWin(){
   let t1Type = 0;
   for(let i=0; i<gameHeight; i++){
     t = 0;
+    t1 = 0;
     while(t<gameWidth){
       if(rect1[t][i]==t1Type && rect1[t][i]!=0)
         t1++;
@@ -129,8 +154,8 @@ function isWin(){
       }
       t++;
       if(t1 > toWin){
-        console.log("WIN" + t + " " + t1 + " " + i);
-        break;
+        // console.log("WIN" + t + " " + t1 + " " + i);
+        return t1Type;
       }
     }
   }
@@ -140,6 +165,7 @@ function isWin(){
   t1Type = 0;
   for(let i=0; i<gameWidth; i++){
     t = 0;
+    t1 = 0;
     while(t<gameHeight){
       if(rect1[i][t]==t1Type && rect1[i][t]!=0)
         t1++;
@@ -149,8 +175,8 @@ function isWin(){
       }
       t++;
       if(t1 > toWin){
-        console.log("WIN" + t + " " + t1 + " " + i);
-        break;
+        // console.log("WIN" + t + " " + t1 + " " + i);
+        return t1Type;
       }
     }
   }
@@ -170,8 +196,8 @@ function isWin(){
       }
       t++;
       if(t1 > toWin){
-        console.log("WIN" + t + " " + t1 + " " + i);
-        break;
+        // console.log("WIN" + t + " " + t1 + " " + i);
+        return t1Type;
       }
     }
   }
@@ -190,8 +216,8 @@ function isWin(){
       }
       t++;
       if(t1 > toWin){
-        console.log("WIN" + t + " " + t1 + " " + i);
-        break;
+        // console.log("WIN" + t + " " + t1 + " " + i);
+        return t1Type;
       }
     }
   }
@@ -211,8 +237,8 @@ function isWin(){
       }
       t--;
       if(t1 > toWin){
-        console.log("WIN" + t + " " + t1 + " " + i);
-        break;
+        // console.log("WIN" + t + " " + t1 + " " + i);
+        return t1Type;
       }
     }
   }
@@ -231,14 +257,141 @@ function isWin(){
       }
       t--;
       if(t1 > toWin){
-        console.log("WIN" + t + " " + t1 + " " + i);
-        break;
+        // console.log("WIN" + t + " " + t1 + " " + i);
+        return t1Type;
       }
     }
   }
 
+  return 0;
+}
+
+
+
+function minmax(depth, alfa, beta){
+
+
+  let localIsWin = isWin();
+  if(localIsWin == 2){
+      // console.log(gameWidth*gameHeight-depth);
+      return (gameWidth*gameHeight-depth);}
+  if(localIsWin == 1){
+      console.log(-gameWidth*gameHeight+depth);
+      return -gameWidth*gameHeight+depth;}
+  // console.log(localIsWin);
+  // console.log(depth + " "+ depthMax);
+  console.log(depth +" "+ move);// + "  " + best);
+
+  if(move+depth == gameWidth*gameHeight-1){
+    // console.log(depth);
+    return 0;
+  }
+
+  let  best = -gameWidth*gameHeight*2;
+  let bestTemp;
+  if((move+depth)%2 == 0){
+
+    if(depth > depthMax){
+      console.log("wwwwwwwwwww")
+      return 0;}
+    for(let i=0; i<gameWidth; i++){
+      for(let j=0; j<gameHeight; j++){
+        if(rect1[i][j]==0){
+          // if((move+depth)%2 ==0)
+          //   rect1[i][j] = 1;
+          // else
+          rect1[i][j] = 2;
+          // console.log(i + " " + j);
+          bestTemp = minmax(depth+1, alfa, beta);
+          rect1[i][j] = 0;
+          if(bestTemp > best)
+            best = bestTemp;
+          if(best > alfa)
+            alfa = best;
+          if(beta <= alfa)
+            break;
+        }
+      }
+    }
+  }
+  else{
+    best = -best;
+    if(depth > depthMax){
+      console.log("Ssssssssss")
+      return -20;
+
+    }
+    for(let i=0; i<gameWidth; i++){
+        for(let j=0; j<gameHeight; j++){
+          if(rect1[i][j]==0){
+            // if((move+depth)%2 ==0)
+            //   rect1[i][j] = 1;
+            // else
+            rect1[i][j] = 1;
+            bestTemp = minmax(depth+1, alfa, beta);
+            rect1[i][j] = 0;
+          // console.log(i + " " + j);
+            if(bestTemp < best)
+              best = bestTemp;
+            if(best < beta)
+              beta = best;
+            if(beta <= alfa)
+              break;
+          }
+        }
+      }
+    }
+  console.log(best + " " + depth);
+  return best;
 
 }
+
+function moveAI(move1){
+  rect1[move1.x][move1.y]=player;
+  move++;
+  changePlayer();
+  if(isWin() || move == gameWidth*gameHeight){
+  // console.log("LEL");
+    // console.log(move1.x + " " + move1.y);
+    // console.log(isWin());
+    dr();
+    return 1;
+  }
+  return 0;
+}
+
+function chooseMove(){
+  // debug();
+  let whatMove = {x: -1, y:-1};
+  let bestTemp = -gameWidth*gameHeight;
+  best = -gameWidth*gameHeight-5;
+  console.log(" " + whatMove.x + " "+ whatMove.y + " " + best);
+  for(let i=0; i<gameWidth; i++){
+      for(let j=0; j<gameHeight; j++){
+        if(rect1[i][j]==0){
+          rect1[i][j]=2;
+          // console.log(i + " " + j);
+          // if(i==2 && j ==0)
+            // bestTemp =debug(minmax(1));
+          bestTemp = minmax(0, best, -best);
+          console.log(i + " " + j + " " + bestTemp + " " + best);
+          rect1[i][j]=0;
+          if(bestTemp == -20)
+            bestTemp = 0;
+          if(bestTemp > best){
+            // console.log(i + " " + j);// + " " + bestTemp);
+            console.log("aa------" + bestTemp);
+            best = bestTemp;
+            whatMove.x = i;
+            whatMove.y = j;
+          }
+        }
+      }
+    }
+    console.log(" " + whatMove.x + " "+ whatMove.y + " " + best);
+    moveAI(whatMove);
+}
+
 
 function draw() {//Wbudowana
   background(220);
