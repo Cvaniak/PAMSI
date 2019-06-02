@@ -2,13 +2,14 @@ var input1;
 var input2;
 var inputToWin;
 var inputDepth;
-var gameWidth = 3;
-var gameHeight = 3;
-var toWin = 2;
+var gameWidth = 4;
+var gameHeight = 4;
+var toWin = 3;
 var rect1;
 var player = 1;
+var start = 0;
 var move =0;
-var depthMax =33;
+var depthMax =4;
 
 
 function setup() {//Wbudowana
@@ -53,9 +54,16 @@ function dr() {
   console.log(gameWidth + " " + gameHeight)
 
   // player = 1;
+  if(move == gameWidth*gameHeight)
+    if(player == 2)
+      player =1;
+    else
+      player =2;
   move =0;
-  if(player ==2)
-    chooseMove();
+  start = 0;
+  if(player ==2){
+    start =1 ;
+    chooseMove();}
   // if()
   // rect1[0][0] = 2;
   // rect1[2][0] = 2;
@@ -318,7 +326,7 @@ function minmax(depth, alfa, beta){
     best = -best;
     if(depth > depthMax){
       console.log("Ssssssssss")
-      return -20;
+      return 0;
 
     }
     for(let i=0; i<gameWidth; i++){
@@ -373,7 +381,7 @@ function chooseMove(){
           // console.log(i + " " + j);
           // if(i==2 && j ==0)
             // bestTemp =debug(minmax(1));
-          bestTemp = minmax(0, best, -best);
+          bestTemp = minmax(start, best, -best);
           console.log(i + " " + j + " " + bestTemp + " " + best);
           rect1[i][j]=0;
           if(bestTemp == -20)
