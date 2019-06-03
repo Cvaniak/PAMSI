@@ -53,17 +53,17 @@ function dr() {
       rect1[i][j] = 0;
   console.log(gameWidth + " " + gameHeight)
 
-  // player = 1;
-  if(move == gameWidth*gameHeight)
-    if(player == 2)
-      player =1;
-    else
-      player =2;
+  // player = 1
   move =0;
   start = 0;
-  if(player ==2){
+  if(player ==1){
+    player =2;
     start =1 ;
-    chooseMove();}
+    chooseMove();
+  }
+  else {
+    player = 1;
+  }
   // if()
   // rect1[0][0] = 2;
   // rect1[2][0] = 2;
@@ -284,11 +284,11 @@ function minmax(depth, alfa, beta){
       // console.log(gameWidth*gameHeight-depth);
       return (gameWidth*gameHeight-depth);}
   if(localIsWin == 1){
-      console.log(-gameWidth*gameHeight+depth);
+      // console.log(-gameWidth*gameHeight+depth);
       return -gameWidth*gameHeight+depth;}
   // console.log(localIsWin);
   // console.log(depth + " "+ depthMax);
-  console.log(depth +" "+ move);// + "  " + best);
+  // console.log(depth +" "+ move);// + "  " + best);
 
   if(move+depth == gameWidth*gameHeight-1){
     // console.log(depth);
@@ -300,8 +300,8 @@ function minmax(depth, alfa, beta){
   if((move+depth)%2 == 0){
 
     if(depth > depthMax){
-      console.log("wwwwwwwwwww")
-      return 0;}
+      // console.log("wwwwwwwwwww")
+      return 1;}
     for(let i=0; i<gameWidth; i++){
       for(let j=0; j<gameHeight; j++){
         if(rect1[i][j]==0){
@@ -325,8 +325,8 @@ function minmax(depth, alfa, beta){
   else{
     best = -best;
     if(depth > depthMax){
-      console.log("Ssssssssss")
-      return 0;
+      // console.log("Ssssssssss")
+      return -1;
 
     }
     for(let i=0; i<gameWidth; i++){
@@ -349,7 +349,7 @@ function minmax(depth, alfa, beta){
         }
       }
     }
-  console.log(best + " " + depth);
+  // console.log(best + " " + depth);
   return best;
 
 }
@@ -373,7 +373,7 @@ function chooseMove(){
   let whatMove = {x: -1, y:-1};
   let bestTemp = -gameWidth*gameHeight;
   best = -gameWidth*gameHeight-5;
-  console.log(" " + whatMove.x + " "+ whatMove.y + " " + best);
+  // console.log(" " + whatMove.x + " "+ whatMove.y + " " + best);
   for(let i=0; i<gameWidth; i++){
       for(let j=0; j<gameHeight; j++){
         if(rect1[i][j]==0){
@@ -382,10 +382,10 @@ function chooseMove(){
           // if(i==2 && j ==0)
             // bestTemp =debug(minmax(1));
           bestTemp = minmax(start, best, -best);
-          console.log(i + " " + j + " " + bestTemp + " " + best);
+          // console.log(i + " " + j + " " + bestTemp + " " + best);
           rect1[i][j]=0;
-          if(bestTemp == -20)
-            bestTemp = 0;
+          // if(bestTemp == -20)
+          //   bestTemp = 0;
           if(bestTemp > best){
             // console.log(i + " " + j);// + " " + bestTemp);
             console.log("aa------" + bestTemp);
